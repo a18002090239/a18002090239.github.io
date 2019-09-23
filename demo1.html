@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+            <input type="text" v-model="inputValue">
+            <input v-on:click="handleBtnClick" type="button" value="提交">
+            <ul>
+                <li v-for="item in list">{{item}}</li>
+            </ul>
+            <table>
+                <td>1wq</td>
+            </table>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                // content:"hello world",
+                // name:"zfj"
+                list:["first","second","third"],
+                inputValue:''
+            },
+            methods:{
+                handleBtnClick:function(){
+                    alert("hi");
+                    this.list.push(this.inputValue);
+                    this.inputValue=""
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
